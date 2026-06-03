@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora </title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #ff6a00;
+            text-align: center;
+            padding-top: 50px;
+        }
+
+        .calculadora {
+            background: white;
+            display: inline-block;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 3px 3px 10px rgba(0,0,0,0.2);
+        }
+
+        input {
+            width: 220px;
+            height: 40px;
+            font-size: 24px;
+            text-align: right;
+            margin-bottom: 10px;
+        }
+
+        button {
+            width: 50px;
+            height: 50px;
+            font-size: 22px;
+            margin: 3px;
+            cursor: pointer;
+        }
+
+        .igual {
+            background: #ff6a00;
+        }
+
+        .borrar {
+            background: #ec7063;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="calculadora">
+        <h2>Calculadora</h2>
+
+        <input type="text" id="pantalla" readonly>
+
+        <br>
+
+        <button onclick="agregar('7')">7</button>
+        <button onclick="agregar('8')">8</button>
+        <button onclick="agregar('9')">9</button>
+        <button onclick="agregar('/')">÷</button>
+
+        <br>
+
+        <button onclick="agregar('4')">4</button>
+        <button onclick="agregar('5')">5</button>
+        <button onclick="agregar('6')">6</button>
+        <button onclick="agregar('*')">×</button>
+
+        <br>
+
+        <button onclick="agregar('1')">1</button>
+        <button onclick="agregar('2')">2</button>
+        <button onclick="agregar('3')">3</button>
+        <button onclick="agregar('-')">−</button>
+
+        <br>
+
+        <button onclick="agregar('0')">0</button>
+        <button onclick="agregar('.')">.</button>
+        <button class="igual" onclick="calcular()">=</button>
+        <button onclick="agregar('+')">+</button>
+
+        <br>
+
+        <button class="borrar" onclick="borrarTodo()" style="width:220px">
+            Borrar
+        </button>
+    </div>
+
+    <script>
+        function agregar(valor) {
+            document.getElementById("pantalla").value += valor;
+        }
+
+        function calcular() {
+            try {
+                document.getElementById("pantalla").value = "Hola Mundo";
+                    //eval(document.getElementById("pantalla").value);
+            } catch {
+                document.getElementById("pantalla").value = "Error";
+            }
+        }
+
+        function borrarTodo() {
+            document.getElementById("pantalla").value = "";
+        }
+    </script>
+
+</body>
+</html>
